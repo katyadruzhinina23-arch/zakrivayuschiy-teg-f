@@ -1,7 +1,7 @@
 /* Здесь вы напишете основную часть стилей страницы.
 
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
-✦ like-icon — для svg-иконки анимированного сердца
+✦ like__icon — для svg-иконки анимированного сердца
 ✦ card__like-button — для кнопки Like рядом с иконкой
 ✦ card__icon-button — для кнопки, оборачивающей иконку
 ✦ card__icon-button — для кнопки, оборачивающей иконку
@@ -9,6 +9,11 @@
 ✦ button__text — для обозначения текстового элемента внутри кнопки
 
 */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
 .page {
   min-inline-size: 320px;
@@ -21,7 +26,7 @@
   padding-block-start: 95px;
 }
 
-.page-width {
+.page__width {
   inline-size: var(--inline-width);
   margin-inline: auto;
 }
@@ -33,11 +38,10 @@
   block-size: clamp(20.438rem, 19.705rem + 3.661vw, 23rem);
   border: 2px solid #000;
   background-color: #fff;
-  
   margin-bottom: 100px;
 }
 
-.header-title {
+.header__title {
   font-family: var(--accent-font, "PressStart2P"), Arial, sans-serif;
   font-size: var(--font-size-title);
   font-weight: var(--title-text-weight);
@@ -45,7 +49,7 @@
   padding-block-end: clamp(9.75rem, 9.376rem + 1.6vw, 10.813rem);
 }
 
-.header-subtitle {
+.header__subtitle {
   display: block;
   font-size: clamp(0.875rem, 0.677rem + 0.85vw, 1.438rem);
   margin-block-start: 20px;
@@ -59,13 +63,13 @@ main {
   gap: 50px;
 }
 
-.section-content {
+.section__content {
   display: flex;
   flex-direction: column;
   border: 2px solid #000;
 }
 
-.section-title {
+.section__title {
   min-block-size: 30px;
   font-family: var(--main-font, "Inter"), Arial, sans-serif;
   font-variation-settings: "wght" var(--main-text-weight);
@@ -74,7 +78,7 @@ main {
   padding-inline: 10px;
 }
 
-.first-section {
+.first__section {
   max-block-size: 52px;
   font-family: var(--main-font, "Inter"), Arial, sans-serif;
   font-variation-settings: "wght" var(--main-text-weight);
@@ -83,51 +87,51 @@ main {
   padding-inline: 10px;
 }
 
-.image-wrapper {
+.image__wrapper {
   position: relative;
   margin: 0;
   padding: 0;
 }
 
-.image_van {
+.image__van {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.image_van--blur {
+.mage__van--blur {
   filter: blur(5px);
 }
 
-.image_van--brightness {
+.mage__van--brightness {
   filter: brightness(400%);
 }
 
-.image_van--grayscale {
+.mage__van--grayscale {
   filter: grayscale(100%);
 }
 
-.image_van--contrast {
+.mage__van--contrast {
   filter: contrast(300%);
 }
 
-.image_van--saturate {
+.mage__van--saturate {
   filter: saturate(300%);
 }
 
-.image_van--opacity-saturate {
+.mage__van--opacity-saturate {
   filter: opacity(0.8) saturate(158%);
 }
 
-.image_van--grayscale {
+.mage__van--grayscale {
   filter: grayscale(100%);
 }
 
-.image_van--hue-rotate {
+.mage__van--hue-rotate {
   filter: hue-rotate(-50deg);
 }
 
-.image-caption {
+.image__caption {
   display: block;
   position: absolute;
   top: 25px;
@@ -139,7 +143,7 @@ main {
   mix-blend-mode: hard-light;
 }
 
-.subtitle-content {
+.subtitle__content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -148,8 +152,8 @@ main {
   padding-inline: 25px;
 }
 
-.section-subtitle,
-.section-text {
+.section__subtitle,
+.section__text {
   font-family: var(--main-font, "Inter"), Arial, sans-serif;
   font-size: 18px;
   font-variation-settings: "wght" var(--text-weight);
@@ -184,7 +188,7 @@ main {
   border: 2px solid #000;
 }
 
-.like-icon {
+.like__icon {
   display: flex;
 }
 
@@ -192,7 +196,7 @@ main {
   transition: fill 0.1s linear;
 }
 
-.main-body {
+.main__body {
   transition: fill 0.3s linear;
   color: transparent;
 }
@@ -211,7 +215,7 @@ main {
   transition: fill 0.3s linear;
 }
 
-.card__icon-button:hover .main-body {
+.card__icon-button:hover .main__body {
   fill: var(--main-color);
   transition: fill 0.3s linear 0.05s;
 }
@@ -221,22 +225,22 @@ main {
   transition: fill 0.3s linear;
 }
 
-.card__icon-button:active .main-body {
+.card__icon-button:active .main__body {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.05s;
 }
 
-.like-icon.is-liked .core {
+.like__icon.is-liked .core {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear;
 }
 
-.like-icon.is-liked .main-body {
+.like__icon.is-liked .main__body {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.05s;
 }
 
-.like-icon.is-liked .contour {
+.like__icon.is-liked .contour {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.06s;
 }
@@ -255,9 +259,10 @@ main {
   inline-size: 130px;
   block-size: 38px;
   padding: 12.5px 34px;
+  cursor: pointer;
 }
 
-.card-actions {
+.card__actions {
   position: relative;
   overflow: hidden;
   font-family: var(--accent-font, "PressStart2P"), Arial, sans-serif;
@@ -268,9 +273,10 @@ main {
   isolation: isolate;
   z-index: 1;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
-.card-actions::before {
+.card__actions::before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -284,12 +290,12 @@ main {
   transition: transform 0.5s ease-out;
 }
 
-.card-actions:hover::before {
+.card__actions:hover::before {
   transform: translateX(0%);
 }
 
-.card-actions:focus,
-.card-actions:focus-visible {
+.card__actions:focus,
+.card__actions:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 #000;
 }
@@ -301,7 +307,7 @@ main {
 }
 
 .button__text,
-.save-icon {
+.save__icon {
   position: relative;
   z-index: 2;
   color: #fff;
@@ -309,12 +315,12 @@ main {
 }
 
 /*@supports (text-stroke: 0.3px #fff) {
-  .image-caption {
+  .image__caption {
     text-stroke: 0.3px #fff;
   }
 }*/
 
-.save-button {
+.save__button {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -328,35 +334,36 @@ main {
   margin-inline: auto;
   position: relative;
   overflow: hidden;
+  cursor: pointer;
 }
 
-.save-icon {
+.save__icon {
   display: block;
   width: 28px;
   height: 28px;
   fill: currentColor;
 }
 
-.save-button__text {
+.save__button-text {
   font-family: var(--accent-font, "PressStart2P"), Arial, sans-serif;
   font-size: 14px;
   transition: box-shadow 0.3s ease;
 }
 
-.save-button:focus,
-.save-button:focus-visible {
+.save__button:focus,
+.save__button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 #000;
 }
 
-.save-dialog .save-icon {
+.save__dialog .save__icon {
   display: block;
   grid-area: icon;
   width: 39px;
   height: 39px;
 }
 
-.save-dialog h2 {
+.save__dialog .dialog__title {
   grid-area: title;
   font-family: var(--accent-font, "PressStart2P"), Arial, sans-serif;
   font-weight: var(--text-weight, 400);
@@ -365,7 +372,7 @@ main {
   inline-size: 202px;
 }
 
-.dialog-button {
+.dialog__button {
   display: grid;
   place-items: center;
   grid-area: form;
@@ -378,14 +385,14 @@ main {
   overflow: hidden;
 }
 
-.dialog-button:focus,
-.dialog-button:focus-visible {
+.dialog__button:focus,
+.dialog__button:focus-visible {
   outline: none;
   box-shadow: 2px 2px 0 #000;
   transition: box-shadow 0.3s ease;
 }
 
-.save-dialog[open] {
+.save__dialog[open] {
   display: grid;
   grid-template-columns: 39px minmax(202px, 234px);
   grid-template-areas:
@@ -399,7 +406,7 @@ main {
   inline-size: clamp(21.313rem, 20.447rem + 3.69vw, 22.063rem);
 }
 
-.save-dialog[open]::backdrop {
+.save__dialog[open]::backdrop {
   background-color: rgba(0, 0, 0, 0.75);
 }
 
@@ -410,25 +417,24 @@ main {
 }
 
 @media (width >= 768px) {
-
-  .first-section {
+  .first__section {
     block-size: 30px;
   }
 
-.save-button {
-    flex-direction: row;           
+  .save__button {
+    flex-direction: row;
   }
 
-  .save-dialog[open] {
-  padding-inline: 30px;
-}
+  .save__dialog[open] {
+    padding-inline: 30px;
+  }
 
-.save-icon {
-  width: 21px;
-  height: 21px;
-}
+  .save__icon {
+    width: 21px;
+    height: 21px;
+  }
 
-.save-button__text {
-  padding-block-start: 2px;
-}
+  .save__button-text {
+    padding-block-start: 2px;
+  }
 }
