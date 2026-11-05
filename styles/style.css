@@ -99,35 +99,31 @@ main {
   height: auto;
 }
 
-.mage__van--blur {
+.image__van--blur {
   filter: blur(5px);
 }
 
-.mage__van--brightness {
+.image__van--brightness {
   filter: brightness(400%);
 }
 
-.mage__van--grayscale {
+.image__van--grayscale {
   filter: grayscale(100%);
 }
 
-.mage__van--contrast {
+.image__van--contrast {
   filter: contrast(300%);
 }
 
-.mage__van--saturate {
+.image__van--saturate {
   filter: saturate(300%);
 }
 
-.mage__van--opacity-saturate {
+.image__van--opacity-saturate {
   filter: opacity(0.8) saturate(158%);
 }
 
-.mage__van--grayscale {
-  filter: grayscale(100%);
-}
-
-.mage__van--hue-rotate {
+.image__van--hue-rotate {
   filter: hue-rotate(-50deg);
 }
 
@@ -141,6 +137,13 @@ main {
   color: transparent;
   -webkit-text-stroke: 0.3px #fff;
   mix-blend-mode: hard-light;
+}
+
+@supports (-webkit-text-stroke: 0.3px #fff) or (text-stroke: 0.3px #fff) {
+  .image__caption {
+    -webkit-text-stroke: 0.3px #fff;
+    text-stroke: 0.3px #fff;
+  }
 }
 
 .subtitle__content {
@@ -287,7 +290,6 @@ main {
   background-color: #000;
   transform: translateX(-100%);
   z-index: 1;
-  transition: transform 0.5s ease-out;
 }
 
 .card__actions:hover::before {
